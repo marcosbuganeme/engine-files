@@ -24,7 +24,6 @@ public abstract class LineReader<T> {
     }
 
     public abstract T novoObjeto();
-    public abstract String getTipo();
 
     public T build(String linha) {
         T obj = novoObjeto();
@@ -38,7 +37,7 @@ public abstract class LineReader<T> {
       }
 
     protected PosicaoReader<T, BigDecimal> number(BiConsumer<T, BigDecimal> biConsumer) {
-        return new PosicaoReader<>(biConsumer, v -> NumberUtils.createBigDecimal(v));
+        return new PosicaoReader<>(biConsumer, informacao -> NumberUtils.createBigDecimal(informacao));
     }
 
     protected PosicaoReader<T, String> string(BiConsumer<T, String> biConsumer) {
