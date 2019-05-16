@@ -18,8 +18,8 @@ final class PosicaoReader<T, I> {
     }
 
     public void load(T obj, Posicao posicao, String linha) {
-        String valor = StringUtils.substring(linha, posicao.getInicio(), posicao.getFim());;
-        I apply = function.apply(valor);
+        String informacaoPosicionada = StringUtils.substring(linha, posicao.getInicio(), posicao.getFim());;
+        I apply = function.apply(informacaoPosicionada);
         biConsumer.accept(obj, apply);
     }
 }

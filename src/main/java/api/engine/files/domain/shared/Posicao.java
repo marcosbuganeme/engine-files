@@ -15,19 +15,19 @@ public final class Posicao implements Comparable<Posicao> {
     }
 
     public static Posicao of(int inicio, int fim) {
-        return new Posicao(inicio, fim);
-      }
+      return new Posicao(inicio, fim);
+    }
 
     public int getInicio() {
-        return inicio - 1;
+      return inicio - 1;
     }
 
     public int getTamanho() {
-        return fim - inicio + 1;
-      }
+      return fim - inicio + 1;
+    }
 
     public int getFim() {
-        return fim;
+      return fim;
     }
 
     public @Override int compareTo(Posicao outro) {
